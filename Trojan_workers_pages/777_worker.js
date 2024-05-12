@@ -1,7 +1,7 @@
 // src/worker.js
 import { connect } from "cloudflare:sockets";
 
-let Pswd = 'trojan';
+let Pswd = '20140920';
 const proxyIPs = ["cdn.xn--b6gac.eu.org"]; //workers.cloudflare.cyou bestproxy.onecf.eu.org cdn-all.xn--b6gac.eu.org cdn.xn--b6gac.eu.org
 let hostnames = [''];
 
@@ -31,7 +31,7 @@ const worker_default = {
 							},
 						});
 					
-					case `/${Pswd}`: {
+					case `/20140920`: {
 						const trojanConfig = gettrojanConfig(Pswd, request.headers.get('Host'));
 						return new Response(`${trojanConfig}`, {
 							status: 200,
